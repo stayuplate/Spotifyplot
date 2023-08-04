@@ -70,7 +70,7 @@ def calculate_metrics(df, num_artists):
                                    'Mean Track Duration': mean_track_duration.loc[top_artists.index]})
     return df_top_artists
 
-def create_plot(df_top_artists, plot_size=(15, 10), plot_style="whitegrid", color_palette='pastel', save_to='MyData', dpi=300):
+def create_plot(df_top_artists, plot_size=(15, 10), plot_style="darkgrid", color_palette='pastel', save_to='Spotify_Top_Artists_Plot', dpi=300):
     """
     Create the plot for the top artists.
     """
@@ -96,6 +96,7 @@ def create_plot(df_top_artists, plot_size=(15, 10), plot_style="whitegrid", colo
 
     # Show the plot
     plt.tight_layout()  # Adjust subplot parameters to give specified padding
+    ax1.set_xlim(-0.5, len(df_top_artists.index) - 0.5) # Adjust the x-axis limits to reduce padding
 
     # Save the plot to a file if save_to is provided
     if save_to is not None:
