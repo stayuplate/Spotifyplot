@@ -5,9 +5,6 @@ import json
 import os
 import logging
 
-# Create a logger
-logging.basicConfig(filename='spotify.log', level=logging.INFO)
-
 def load_data(filepath):
     """
     Load data from a directory containing json files.
@@ -113,7 +110,7 @@ def top_artists(filepath, num_artists=50, excluded_artists=[]):
     create_plot(df_top_artists, save_to='top_artists.png')
 
 def main():
-    top_artists('MyData', num_artists=50, excluded_artists=['Peppa Pig Hörspiele'])
+    top_artists('MyData', num_artists=50, excluded_artists=[])
 
 if __name__ == "__main__":
     main()
